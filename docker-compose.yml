@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "5173:5173" # Puerto para el servidor de desarrollo de Vite
+    volumes:
+      - .:/app
+      - /app/node_modules # Ignorar node_modules fuera del contenedor
+    working_dir: /app
+    command: npm run dev # Comando para iniciar Vite en modo desarrollo
+    networks:
+      - react_app_network
+
+networks:
+  react_app_network:
+    driver: bridge
