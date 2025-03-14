@@ -26,7 +26,7 @@ const GenerateCertificate: React.FC = () => {
         }
     };
 
-    const handleCourseChange = (value: any, option: any) => {
+    const handleCourseChange = (option: any) => { // Eliminado el parámetro 'value'
         setSelectedCourse(option.course);
         setHours(option.course.hours);
     };
